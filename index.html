@@ -24,7 +24,8 @@
     </div>
     <div id="modal">
         <div id="imgBook">
-            <input type="image">
+            <img id="outputImg">
+            <input type="file" accept="image/*">
         </div>
         <div id="formBook">
             <form>
@@ -51,6 +52,8 @@
                     <input type="radio" id="star1" name="rate" value="1" />
                     <label for="star1" title="text">1 star</label>
                 </div>
+                <label for="review">Review:</label>
+                <textarea name="review" rows="4" cols="50" placeholder="I think that..."></textarea>
             </form>
         </div>
     </div>

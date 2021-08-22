@@ -1,3 +1,22 @@
+#modal {
+    display: flex;
+    width: 200px;
+}
+
+#imgbook {
+    width: 100px;
+    height: 100%;
+    border: 1px solid pink;
+}
+
+#formbook {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+
+/* 5star review */
 .rate {
     float: left;
     height: 46px;
