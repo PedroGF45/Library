@@ -2,6 +2,8 @@ let myLibrary = [];
 
 const addBookBtn = document.getElementById("addBook");
 const modalDisplay = document.getElementById("modal");
+const body = document.querySelectorAll("body > *:not(#modal)");
+
 
 //the object constructor
 function book() {
@@ -15,5 +17,7 @@ function book() {
 //add books by clicking on button
 addBookBtn.addEventListener("click", function addBookToLibrary() {
     modalDisplay.classList.toggle("grid");
-    console.log(modalDisplay);
+
+    //makes everything blurr less the modal
+    body.forEach(body => body.classList.toggle("blur"));  
 })
