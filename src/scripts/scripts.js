@@ -14,5 +14,6 @@ function book() {
 
 //add books by clicking on button
 addBookBtn.addEventListener("click", function addBookToLibrary() {
-    modalDisplay.style.display = "block";
+    modalDisplay.classList.toggle("grid");
+    console.log(modalDisplay);
 })
