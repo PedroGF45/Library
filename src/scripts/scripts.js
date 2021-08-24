@@ -1,10 +1,12 @@
 let myLibrary = [];
 
-const addBookModal = document.getElementById("addBook");
+const openModalBtn= document.getElementById("addBook");//get open modal button
 const modalDisplay = document.getElementById("modal");
-const body = document.querySelectorAll("body > *:not(#modal)");
-const addBookBtn = document.getElementById("addBooktoLibrary");
+const body = document.querySelectorAll("body > *:not(#modal)"); //get select body except modal
+const addBookBtn = document.getElementById("addBooktoLibrary"); //get addbook button to library
 const library = document.getElementById("books");
+const btnYesForm = document.getElementById("yesbtn");
+const btnNoForm = document.getElementById("nobtn");
 
 //the object constructor
 function book() {
@@ -16,13 +18,14 @@ function book() {
 
 
 //add books by clicking on button
-addBookModal.addEventListener("click", function openModal() {
+openModalBtn.addEventListener("click", function openModal() {
     modalDisplay.classList.toggle("grid");
     
     //makes everything blurr less the modal
     body.forEach(body => body.classList.toggle("blur"));  
 })
 
+//create books 
 addBookBtn.addEventListener("click", function createBook() {
     modalDisplay.classList.toggle("grid");
     body.forEach(body => body.classList.toggle("blur"));
@@ -41,6 +44,7 @@ addBookBtn.addEventListener("click", function createBook() {
     updateLibrary(book1);
 });
 
+//update library by pushing created books to an array
 function updateLibrary() {
     
     let bookDiv = document.createElement("div");
