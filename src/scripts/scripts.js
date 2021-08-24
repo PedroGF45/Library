@@ -5,8 +5,11 @@ const modalDisplay = document.getElementById("modal");
 const body = document.querySelectorAll("body > *:not(#modal)"); //get select body except modal
 const addBookBtn = document.getElementById("addBooktoLibrary"); //get addbook button to library
 const library = document.getElementById("books");
+
+//get variables from review portion of the modal
 const btnYesForm = document.getElementById("yesbtn");
 const btnNoForm = document.getElementById("nobtn");
+const reviewModal = document.getElementById("rate");
 
 //the object constructor
 function book() {
@@ -61,3 +64,11 @@ function updateLibrary() {
     bookDiv.appendChild(pagesp);
 }
 
+//open and close functions for review Modal
+btnYesForm.addEventListener("click", function openModalReview() {
+    reviewModal.style.display = "flex"; 
+})
+
+btnNoForm.addEventListener("click", function closeModalReview() {
+    reviewModal.style.display = "none";
+})

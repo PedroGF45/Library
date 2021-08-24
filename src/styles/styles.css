@@ -49,6 +49,7 @@ h1 {
 }
 
 #rate {
+    display: none;
     border: 1px solid red;
     margin: 0 auto;
 }
