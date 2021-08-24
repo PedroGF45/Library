@@ -23,45 +23,50 @@
           <button id="addBook" type="submit">+ Add Book</button>
     </div>
     <div id="modal" class="modal">
-        <div id="imgBook">
-            <img id="outputImg">
-            <input type="file" accept="image/*">
+        <div id="addBookModal">
+            <div id="imgBook">
+                <img id="outputImg">
+                <input type="file" accept="image/*">
+            </div>
+            <div id="formBook">
+                <form>
+                    <label for="series">Series:</label>
+                    <input id="inputSeries" type="text" class="inputform" value="" placeholder="The Grishaverse" name="series"><br />
+                    <label for="title">Title:</label>
+                    <input id="inputTitle" type="text" class="inputform" value="" placeholder="Throne of Glass" name="title"><br />
+                    <label for="pages">Pages:</label>
+                    <input id="inputPages" type="number" class="inputform" value="" placeholder="437" name="pages"><br />
+                    <label for="categoriesForm">Category:</label>
+                    <select name="categories" id="categoriesForm" class="inputform">
+                        <option value="contemporâneo">Contemporâneo</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="distopy">Distopy</option>
+                    </select>
+                    <p id="radioQuestion">Have you read?</p>
+                    <input type="button" id="yesbtn" name="read" class="inputform">
+                    <label for="yes">Yes</label>
+                    <input type="button" id="nobtn" name="read" class="inputform">
+                    <label for="no">No</label>
+                </form>
+            </div>
         </div>
-        <div id="formBook">
-            <form>
-                <label for="series">Series:</label>
-                <input id="inputSeries" type="text" class="inputform" value="" placeholder="The Grishaverse" name="series"><br />
-                <label for="title">Title:</label>
-                <input id="inputTitle" type="text" class="inputform" value="" placeholder="Throne of Glass" name="title"><br />
-                <label for="pages">Pages:</label>
-                <input id="inputPages" type="number" class="inputform" value="" placeholder="437" name="pages"><br />
-                <label for="categoriesForm">Category:</label>
-                <select name="categories" id="categoriesForm" class="inputform">
-                    <option value="contemporâneo">Contemporâneo</option>
-                    <option value="fantasy">Fantasy</option>
-                    <option value="distopy">Distopy</option>
-                </select>
-                <p id="radioQuestion">Have you read?</p>
-                <input type="button" id="yesbtn" name="read" class="inputform">
-                <label for="yes">Yes</label>
-                <input type="button" id="nobtn" name="read" class="inputform">
-                <label for="no">No</label>
-            </form>
-        </div>
-        <div id="rate" class="rate">
-            <input type="radio" id="star5" name="rate" value="5" />
-            <label for="star5" title="text">5 stars</label>
-            <input type="radio" id="star4" name="rate" value="4" />
-            <label for="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
-            <label for="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
-            <label for="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
-            <label for="star1" title="text">1 star</label>
-            <label for="review">Review:</label>
+        <div id="rate">
+            <p>I review this book with...</p>
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+                <label for="review">Review:</label>
+            </div>
             <textarea name="review" placeholder="I think that..."></textarea>
-        </div>
+        </div> 
         <button id="addBooktoLibrary" type="submit">add book</button> 
     </div>
     <p id="numberOfBooks"></p>

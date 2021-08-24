@@ -64,6 +64,7 @@ function updateLibrary() {
     bookDiv.appendChild(pagesp);
 }
 
+/*
 //open and close functions for review Modal
 btnYesForm.addEventListener("click", function openModalReview() {
     reviewModal.style.display = "flex"; 
@@ -72,3 +73,4 @@ btnYesForm.addEventListener("click", function openModalReview() {
 btnNoForm.addEventListener("click", function closeModalReview() {
     reviewModal.style.display = "none";
 })
+*/
