@@ -23,7 +23,7 @@ function book() {
 
 //add books by clicking on button
 openModalBtn.addEventListener("click", function openModal() {
-    modalDisplay.classList.toggle("grid");
+    modalDisplay.style.display = "inline-block";
     
     //makes everything blurr less the modal
     body.forEach(body => body.classList.toggle("blur"));  
@@ -31,7 +31,7 @@ openModalBtn.addEventListener("click", function openModal() {
 
 //create books 
 addBookBtn.addEventListener("click", function createBook() {
-    modalDisplay.classList.toggle("grid");
+    modalDisplay.style.display = "none";
     body.forEach(body => body.classList.toggle("blur"));
 
     //variables from the form
