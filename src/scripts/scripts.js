@@ -53,27 +53,34 @@ addBookBtn.addEventListener("click", function createBook() {
     book1.status = statusValue;
     
     myLibrary.push(book1);
-    updateLibrary(book1);
+    updateLibraryOnDisplay(book1);
 });
 
 //update library by pushing created books to an array
-function updateLibrary() {
+function updateLibraryOnDisplay() {
     
     //create elements
     let bookDiv = document.createElement("div");
     let seriesp = document.createElement("p");
     let titlep = document.createElement("p");
     let pagesp = document.createElement("p");
-
+    let categoryp = document.createElement("p");
+    let statusp = document.createElement("p");
 
     seriesp.innerText = myLibrary[0].series;
     titlep.innerText = myLibrary[0].nameBook;
     pagesp.innerText = myLibrary[0].pages;
-    
+    categoryp.innerText = myLibrary[0].category;
+    statusp.innerText = myLibrary[0].status;
+
     library.appendChild(bookDiv);
     bookDiv.appendChild(seriesp);
     bookDiv.appendChild(titlep);
     bookDiv.appendChild(pagesp);
+    bookDiv.appendChild(categoryp);
+    bookDiv.appendChild(statusp);
+
+    console.log(myLibrary[0]);
 }
 
 
