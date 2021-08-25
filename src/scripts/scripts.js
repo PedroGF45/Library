@@ -40,44 +40,54 @@ function createBook() {
     body.forEach(body => body.classList.toggle("blur"));
 
     //get variables from the form
+    let imgValue = document.getElementById("inputImage");
     let seriesValue = document.getElementById("inputSeries").value;
     let titleValue = document.getElementById("inputTitle").value;
     let pagesValue = document.getElementById("inputPages").value;
     let categoryValue = document.getElementById("categoriesForm").value;
     let statusValue = document.getElementById("statusForm").value;
- 
+    let starsValue = document.getElementById
+    let reviewValue = document.getElementById
+
+
     //create new object for the book
-    let book1 = Object.create(book);
-    book1.series = seriesValue;
-    book1.nameBook = titleValue;
-    book1.pages = pagesValue;
-    book1.category = categoryValue;
-    book1.status = statusValue;
+    let newBook = Object.create(book);
+    newBook.img = URL.createObjectURL(imgValue.files[0]); // set src to blob url
+    newBook.series = seriesValue;
+    newBook.nameBook = titleValue;
+    newBook.pages = pagesValue;
+    newBook.category = categoryValue;
+    newBook.status = statusValue;
+    newBook.stars = starsValue;
+    newBook.review  = reviewValue;
 
     //push the book into the array mylibrary
-    myLibrary.push(book1)
+    myLibrary.push(newBook)
 
-    updateLibraryOnDisplay(book1);
+    updateLibraryOnDisplay(newBook);
 };
 
 //update library by pushing created books to an array
-function updateLibraryOnDisplay(book1) {
+function updateLibraryOnDisplay(newBook) {
     
     //create elements
     let bookDiv = document.createElement("div");
+    let img = document.createElement("img");
     let seriesp = document.createElement("p");
     let titlep = document.createElement("p");
     let pagesp = document.createElement("p");
     let categoryp = document.createElement("p");
     let statusp = document.createElement("p");
 
-    seriesp.innerText = book1.series;
-    titlep.innerText = book1.nameBook;
-    pagesp.innerText = book1.pages;
-    categoryp.innerText = book1.category;
-    statusp.innerText = book1.status;
+    img.src = newBook.img;
+    seriesp.innerText = newBook.series;
+    titlep.innerText = newBook.nameBook;
+    pagesp.innerText = newBook.pages;
+    categoryp.innerText = newBook.category;
+    statusp.innerText = newBook.status;
 
     library.appendChild(bookDiv);
+    bookDiv.appendChild(img);
     bookDiv.appendChild(seriesp);
     bookDiv.appendChild(titlep);
     bookDiv.appendChild(pagesp);
@@ -85,6 +95,7 @@ function updateLibraryOnDisplay(book1) {
     bookDiv.appendChild(statusp);
 
     bookDiv.classList.add("red");
+
 }
 
 
