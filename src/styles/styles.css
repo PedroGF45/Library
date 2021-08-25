@@ -19,7 +19,7 @@ h1 {
 }
 
 .modal {
-    display: inline-block;
+    display: none;
     position: absolute;
     left: 50%;
     top: 60%;
@@ -28,6 +28,10 @@ h1 {
     width: 500px;
     height: 320px;
     border: 3px solid;
+}
+
+.show {
+    display: inline-block;
 }
 
 #addBookModal {
