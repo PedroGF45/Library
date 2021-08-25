@@ -38,26 +38,29 @@ addBookBtn.addEventListener("click", function createBook() {
     modalDisplay.classList.toggle("show");
     body.forEach(body => body.classList.toggle("blur"));
 
-    //variables from the form
+    //get variables from the form
     let seriesValue = document.getElementById("inputSeries").value;
     let titleValue = document.getElementById("inputTitle").value;
     let pagesValue = document.getElementById("inputPages").value;
     let categoryValue = document.getElementById("categoriesForm").value;
     let statusValue = document.getElementById("statusForm").value;
-
-    const book1 = Object.create(book);
+ 
+    //create new object for the book
+    let book1 = Object.create(book);
     book1.series = seriesValue;
     book1.nameBook = titleValue;
     book1.pages = pagesValue;
     book1.category = categoryValue;
     book1.status = statusValue;
-    
-    myLibrary.push(book1);
+
+    //push the book into the array mylibrary
+    myLibrary.push(book1)
+
     updateLibraryOnDisplay(book1);
 });
 
 //update library by pushing created books to an array
-function updateLibraryOnDisplay() {
+function updateLibraryOnDisplay(book1) {
     
     //create elements
     let bookDiv = document.createElement("div");
@@ -67,11 +70,11 @@ function updateLibraryOnDisplay() {
     let categoryp = document.createElement("p");
     let statusp = document.createElement("p");
 
-    seriesp.innerText = myLibrary[0].series;
-    titlep.innerText = myLibrary[0].nameBook;
-    pagesp.innerText = myLibrary[0].pages;
-    categoryp.innerText = myLibrary[0].category;
-    statusp.innerText = myLibrary[0].status;
+    seriesp.innerText = book1.series;
+    titlep.innerText = book1.nameBook;
+    pagesp.innerText = book1.pages;
+    categoryp.innerText = book1.category;
+    statusp.innerText = book1.status;
 
     library.appendChild(bookDiv);
     bookDiv.appendChild(seriesp);
@@ -80,7 +83,7 @@ function updateLibraryOnDisplay() {
     bookDiv.appendChild(categoryp);
     bookDiv.appendChild(statusp);
 
-    console.log(myLibrary[0]);
+    bookDiv.classList.add("red");
 }
 
 
