@@ -19,14 +19,14 @@ h1 {
 }
 
 .modal {
-    display: flex;
+    display: inline-block;
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 60%;
     margin-left: -250px;
     margin-top: -160px;
     width: 500px;
-    height: 500px;
+    height: 320px;
     border: 3px solid;
 }
 
@@ -56,6 +56,10 @@ textarea {
     height: 100px;
 }
 
+#reviewModal {
+    display: none;
+}
+
 #addBooktoLibrary {
     display: block;
     margin: auto;
@@ -64,6 +68,8 @@ textarea {
     padding: 5px 10px;
     color: white;
 }
+
+
 
 /* 5star review */
 .rate {
