@@ -24,18 +24,18 @@
     </div>
     <div id="modal" class="modal">
         <div id="addBookModal">
-            <div id="imgBook">
-                <img id="outputImg">
-                <input type="file" accept="image/*">
-            </div>
-            <div id="formBook">
-                <form>
+            <form action="" name="myform" id ="myform">
+                <div id="imgBook">
+                    <img id="outputImg">
+                    <input type="file" accept="image/*" required/>
+                </div>
+                <div id="formBook">
                     <label for="series">Series:</label>
-                    <input id="inputSeries" type="text" class="inputform" value="" placeholder="The Grishaverse" name="series"><br />
+                    <input id="inputSeries" type="text" class="inputform" value="" placeholder="The Grishaverse" name="series" required/><br />
                     <label for="title">Title:</label>
-                    <input id="inputTitle" type="text" class="inputform" value="" placeholder="Throne of Glass" name="title"><br />
+                    <input id="inputTitle" type="text" class="inputform" value="" placeholder="Throne of Glass" name="title" required/><br />
                     <label for="pages">Pages:</label>
-                    <input id="inputPages" type="number" class="inputform" value="" placeholder="437" name="pages"><br />
+                    <input id="inputPages" type="number" class="inputform" value="" placeholder="437" name="pages" required/><br />
                     <label for="categoriesForm">Category:</label>
                     <select name="categories" id="categoriesForm" class="inputform">
                         <option value="contemporâneo">Contemporâneo</option>
@@ -48,8 +48,9 @@
                         <option value="Reading">Currently Reading</option>
                         <option value="Read">Read</option>
                     </select>
-                </form>
-            </div>
+                </div>
+                <button id="addBooktoLibrary" type="submit">add book</button> 
+            </form>           
         </div>
         <div id="reviewModal">
             <p id="reviewP">I review this book with</p>
@@ -68,7 +69,6 @@
             </div>
             <textarea name="review" placeholder="I think that..."></textarea>
         </div>
-        <button id="addBooktoLibrary" type="submit">add book</button> 
     </div>
     <div id="books">
             

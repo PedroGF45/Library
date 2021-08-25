@@ -5,6 +5,7 @@ const modalDisplay = document.getElementById("modal"); //get modal id
 const body = document.querySelectorAll("body > *:not(#modal)"); //get select body except modal
 const addBookBtn = document.getElementById("addBooktoLibrary"); //get addbook button to library
 const library = document.getElementById("books");
+const form = document.getElementById("myform");
 
 //get variables from review portion of the modal
 
@@ -34,7 +35,7 @@ openModalBtn.addEventListener("click", function openModal() {
 })
 
 //create books 
-addBookBtn.addEventListener("click", function createBook() {
+function createBook() {
     modalDisplay.classList.toggle("show");
     body.forEach(body => body.classList.toggle("blur"));
 
@@ -57,7 +58,7 @@ addBookBtn.addEventListener("click", function createBook() {
     myLibrary.push(book1)
 
     updateLibraryOnDisplay(book1);
-});
+};
 
 //update library by pushing created books to an array
 function updateLibraryOnDisplay(book1) {
@@ -87,5 +88,9 @@ function updateLibraryOnDisplay(book1) {
 }
 
 
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    createBook();
 
+})
 
