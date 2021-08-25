@@ -6,17 +6,20 @@ const body = document.querySelectorAll("body > *:not(#modal)"); //get select bod
 const addBookBtn = document.getElementById("addBooktoLibrary"); //get addbook button to library
 const library = document.getElementById("books");
 
-
 //get variables from review portion of the modal
-const btnYesForm = document.getElementById("yesbtn");
-const btnNoForm = document.getElementById("nobtn");
-const reviewModal = document.getElementById("rate");
+
+const reviewModal = document.getElementById("reviewModal");
+console.log(reviewModal);
 
 //the object constructor
 function book() {
+    this.img = img,
     this.series = series,
     this.nameBook = nameBook,
     this.pages = pages,
+    this.category = category,
+    this.status = status,
+    this.stars = stars,
     this.review = review
 };
 
@@ -66,15 +69,3 @@ function updateLibrary() {
 }
 
 
-//open and close functions for review Modal
-btnYesForm.addEventListener("click", function openModalReview() {
-    reviewModal.style.display = "flex"; 
-    modalDisplay.style.height = "500px";
-    addBookBtn.style.marginTop = "10px";
-})
-
-btnNoForm.addEventListener("click", function closeModalReview() {
-    reviewModal.style.display = "none";
-    modalDisplay.style.height = "300px";
-    addBookBtn.style.marginTop = "85px";
-})

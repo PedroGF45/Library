@@ -31,27 +31,28 @@
             <div id="formBook">
                 <form>
                     <label for="series">Series:</label>
-                    <input id="inputSeries" type="text" class="inputform" value="" placeholder="The Grishaverse" name="series"><br />
+                    <input id="inputSeries" type="text" class="inputform" value="" placeholder="The Grishaverse" name="series">
                     <label for="title">Title:</label>
-                    <input id="inputTitle" type="text" class="inputform" value="" placeholder="Throne of Glass" name="title"><br />
+                    <input id="inputTitle" type="text" class="inputform" value="" placeholder="Throne of Glass" name="title">
                     <label for="pages">Pages:</label>
-                    <input id="inputPages" type="number" class="inputform" value="" placeholder="437" name="pages"><br />
+                    <input id="inputPages" type="number" class="inputform" value="" placeholder="437" name="pages">
                     <label for="categoriesForm">Category:</label>
                     <select name="categories" id="categoriesForm" class="inputform">
                         <option value="contemporâneo">Contemporâneo</option>
                         <option value="fantasy">Fantasy</option>
                         <option value="distopy">Distopy</option>
                     </select>
-                    <p id="radioQuestion">Have you read?</p>
-                    <input type="button" id="yesbtn" name="read" class="inputform">
-                    <label for="yes">Yes</label>
-                    <input type="button" id="nobtn" name="read" class="inputform">
-                    <label for="no">No</label>
+                    <label for="statusForm">Status:</label>
+                    <select name="status" id="statusForm" class="inputform">
+                        <option value="Not Read">Contemporâneo</option>
+                        <option value="Reading">Fantasy</option>
+                        <option value="Read">Distopy</option>
+                    </select>
                 </form>
             </div>
         </div>
-        <div id="rate">
-            <p>I review this book with</p>
+        <div id="reviewModal">
+            <p id="reviewP">I review this book with</p>
             <div class="rate">
                 <input type="radio" id="star5" name="rate" value="5" />
                 <label for="star5" title="text">5 stars</label>
@@ -66,12 +67,8 @@
                 <label for="review">Review:</label>
             </div>
             <textarea name="review" placeholder="I think that..."></textarea>
-        </div> 
+        </div>
         <button id="addBooktoLibrary" type="submit">add book</button> 
-    </div>
-    <p id="numberOfBooks"></p>
-    <div id="books">
-
     </div>
 	<script src="src/scripts/scripts.js"></script>
   </body>
