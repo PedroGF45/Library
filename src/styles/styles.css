@@ -79,6 +79,20 @@ textarea {
     background-color: red;
 }
 
+#books {
+    display: flex;
+}
+
+#books div {
+    border: 1px solid black;
+}
+
+#books button {
+    padding: 10px 15px;
+}
+
+
+
 /* 5star review */
 .rate {
     float: left;

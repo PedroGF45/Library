@@ -78,6 +78,18 @@ function updateLibraryOnDisplay(newBook) {
     let pagesp = document.createElement("p");
     let categoryp = document.createElement("p");
     let statusp = document.createElement("p");
+    let editBook = document.createElement("button");
+    let deleteBook = document.createElement("button");
+
+    editBook.addEventListener("click", function editBook() {
+
+    })
+
+    deleteBook.addEventListener("click", function deleteBook() {
+        myLibrary.pop(newBook);
+        console.log(myLibrary);
+        updateLibraryOnDisplay();
+    })
 
     img.src = newBook.img;
     seriesp.innerText = newBook.series;
@@ -85,6 +97,8 @@ function updateLibraryOnDisplay(newBook) {
     pagesp.innerText = newBook.pages;
     categoryp.innerText = newBook.category;
     statusp.innerText = newBook.status;
+    editBook.innerText = "EDIT";
+    deleteBook.innerText = "DELETE";
 
     library.appendChild(bookDiv);
     bookDiv.appendChild(img);
@@ -93,9 +107,11 @@ function updateLibraryOnDisplay(newBook) {
     bookDiv.appendChild(pagesp);
     bookDiv.appendChild(categoryp);
     bookDiv.appendChild(statusp);
+    bookDiv.appendChild(editBook);
+    bookDiv.appendChild(deleteBook);
+
 
     bookDiv.classList.add("red");
-
 }
 
 
