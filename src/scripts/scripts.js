@@ -1,4 +1,5 @@
 let myLibrary = [];
+let i = 0;
 
 const openModalBtn= document.getElementById("openModal"); //get open modal button
 const modalDisplay = document.getElementById("modal"); //get modal id
@@ -62,14 +63,20 @@ function createBook() {
     newBook.review  = reviewValue;
 
     //push the book into the array mylibrary
-    myLibrary.push(newBook)
-
+    if (myLibrary[i] == undefined) {
+        myLibrary.push(newBook);
+        newBook.id = i;
+        i++;
+        console.log(i);
+    }
+    
     updateLibraryOnDisplay(newBook);
 };
 
+
 //update library by pushing created books to an array
 function updateLibraryOnDisplay(newBook) {
-    
+
     //create elements
     let bookDiv = document.createElement("div");
     let img = document.createElement("img");
@@ -87,8 +94,6 @@ function updateLibraryOnDisplay(newBook) {
 
     deleteBook.addEventListener("click", function deleteBook() {
         myLibrary.pop(newBook);
-        console.log(myLibrary);
-        updateLibraryOnDisplay();
     })
 
     img.src = newBook.img;
@@ -109,9 +114,6 @@ function updateLibraryOnDisplay(newBook) {
     bookDiv.appendChild(statusp);
     bookDiv.appendChild(editBook);
     bookDiv.appendChild(deleteBook);
-
-
-    bookDiv.classList.add("red");
 }
 
 
@@ -120,4 +122,6 @@ form.addEventListener("submit", function (event) {
     createBook();
 
 })
+
+
 
