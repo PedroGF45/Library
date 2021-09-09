@@ -1,5 +1,4 @@
 let myLibrary = [];
-let i = 0;
 
 const openModalBtn= document.getElementById("openModal"); //get open modal button
 const modalDisplay = document.getElementById("modal"); //get modal id
@@ -85,14 +84,15 @@ function updateLibraryOnDisplay(newBook) {
     let pagesp = document.createElement("p");
     let categoryp = document.createElement("p");
     let statusp = document.createElement("p");
-    let editBook = document.createElement("button");
-    let deleteBook = document.createElement("button");
+    let editBookBtn = document.createElement("button");
+    let deleteBookBtn = document.createElement("button");
 
-    editBook.addEventListener("click", function editBook() {
+    
 
-    })
-
-    deleteBook.addEventListener("click", function deleteBook() {
+    deleteBookBtn.addEventListener("click", function deleteBook() {
+        let buttonsQuantity = document.querySelectorAll(`#books button`);
+        let i = 0;
+        if (buttonsQuantity[i] == ) //decifrar isto
         myLibrary.pop(newBook);
     })
 
@@ -102,8 +102,8 @@ function updateLibraryOnDisplay(newBook) {
     pagesp.innerText = newBook.pages;
     categoryp.innerText = newBook.category;
     statusp.innerText = newBook.status;
-    editBook.innerText = "EDIT";
-    deleteBook.innerText = "DELETE";
+    editBookBtn.innerText = "EDIT";
+    deleteBookBtn.innerText = "DELETE";
 
     library.appendChild(bookDiv);
     bookDiv.appendChild(img);
@@ -112,8 +112,8 @@ function updateLibraryOnDisplay(newBook) {
     bookDiv.appendChild(pagesp);
     bookDiv.appendChild(categoryp);
     bookDiv.appendChild(statusp);
-    bookDiv.appendChild(editBook);
-    bookDiv.appendChild(deleteBook);
+    bookDiv.appendChild(editBookBtn);
+    bookDiv.appendChild(deleteBookBtn);
 }
 
 
