@@ -62,12 +62,9 @@ function createBook() {
     newBook.review  = reviewValue;
 
     //push the book into the array mylibrary
-    if (myLibrary[i] == undefined) {
-        myLibrary.push(newBook);
-        newBook.id = i;
-        i++;
-        console.log(i);
-    }
+    myLibrary.push(newBook);
+
+
     
     updateLibraryOnDisplay(newBook);
 };
@@ -88,12 +85,10 @@ function updateLibraryOnDisplay(newBook) {
     let deleteBookBtn = document.createElement("button");
 
     
-
+    //removes book from library
     deleteBookBtn.addEventListener("click", function deleteBook() {
-        let buttonsQuantity = document.querySelectorAll(`#books button`);
-        let i = 0;
-        if (buttonsQuantity[i] == ) //decifrar isto
-        myLibrary.pop(newBook);
+        let index = myLibrary.indexOf(newBook);
+        myLibrary.splice(index, 1); 
     })
 
     img.src = newBook.img;
