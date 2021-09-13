@@ -84,13 +84,6 @@ function updateLibraryOnDisplay(newBook) {
     let editBookBtn = document.createElement("button");
     let deleteBookBtn = document.createElement("button");
 
-    
-    //removes book from library
-    deleteBookBtn.addEventListener("click", function deleteBook() {
-        let index = myLibrary.indexOf(newBook);
-        myLibrary.splice(index, 1); 
-    })
-
     img.src = newBook.img;
     seriesp.innerText = newBook.series;
     titlep.innerText = newBook.nameBook;
@@ -109,6 +102,13 @@ function updateLibraryOnDisplay(newBook) {
     bookDiv.appendChild(statusp);
     bookDiv.appendChild(editBookBtn);
     bookDiv.appendChild(deleteBookBtn);
+
+    //removes book from library
+    deleteBookBtn.addEventListener("click", function deleteBook() {
+        let index = myLibrary.indexOf(newBook);
+        myLibrary.splice(index, 1);
+        bookDiv.remove();
+    })
 }
 
 
