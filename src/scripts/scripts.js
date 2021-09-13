@@ -81,8 +81,18 @@ function updateLibraryOnDisplay(newBook) {
     let pagesp = document.createElement("p");
     let categoryp = document.createElement("p");
     let statusp = document.createElement("p");
+
+    //add edit button and icon for it
     let editBookBtn = document.createElement("button");
+    let editIcon = document.createElement("span");
+    editIcon.classList.add("material-icons");
+    editIcon.innerText = "edit";
+
+    //add delete button and icon for it
     let deleteBookBtn = document.createElement("button");
+    let deleteIcon = document.createElement("span");
+    deleteIcon.classList.add("material-icons");
+    deleteIcon.innerText = "delete";
 
     img.src = newBook.img;
     seriesp.innerText = newBook.series;
@@ -90,8 +100,7 @@ function updateLibraryOnDisplay(newBook) {
     pagesp.innerText = newBook.pages;
     categoryp.innerText = newBook.category;
     statusp.innerText = newBook.status;
-    editBookBtn.innerText = "EDIT";
-    deleteBookBtn.innerText = "DELETE";
+    
 
     library.appendChild(bookDiv);
     bookDiv.appendChild(img);
@@ -101,7 +110,9 @@ function updateLibraryOnDisplay(newBook) {
     bookDiv.appendChild(categoryp);
     bookDiv.appendChild(statusp);
     bookDiv.appendChild(editBookBtn);
+    editBookBtn.appendChild(editIcon);
     bookDiv.appendChild(deleteBookBtn);
+    deleteBookBtn.appendChild(deleteIcon);
 
     //removes book from library
     deleteBookBtn.addEventListener("click", function deleteBook() {
