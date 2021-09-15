@@ -89,10 +89,17 @@ textarea {
     border: 1px solid black;
     margin: 30px;
     width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1px;
 }
 
 #books button {
+    position: relative;
+    right: 0px;
     padding: 10px 15px;
+
 }
 
 
