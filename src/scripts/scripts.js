@@ -119,9 +119,24 @@ function updateLibraryOnDisplay(newBook) {
         let index = myLibrary.indexOf(newBook);
         myLibrary.splice(index, 1);
         bookDiv.remove();
-    })
+    });
 }
 
+//sort books by readness
+const sortRead = document.getElementById("isBookReads");
+sortRead.addEventListener("change", function sortByReadness() {
+    this.value == "allRead" ? //show everyone : 
+    this.value == "toBeRead" ? //show only those to be read : 
+    this.value == "isRead" ? //show only those who are read;
+});
+
+//sort books by category
+const sortCategory = document.getElementById("categories");
+sortCategory.addEventListener("change", function sortByCategory() {
+    this.value == "allCategories" ? //show everyone
+    this.value == "fantasy" ? //show only those which are fantasy
+    this.value == "distopy" ? //show only those which are distopy 
+})
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
