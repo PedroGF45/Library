@@ -81,10 +81,14 @@ textarea {
 
 #books {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 #books div {
     border: 1px solid black;
+    margin: 30px;
+    width: 250px;
 }
 
 #books button {
