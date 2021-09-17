@@ -124,16 +124,25 @@ function updateLibraryOnDisplay(newBook) {
 
 //sort books by readness
 const sortRead = document.getElementById("isBookReads");
-sortRead.addEventListener("change", function sortByReadness() {
-    if (sortRead.value == "isRead") {
-        const notRead = myLibrary.filter(e => e.status != "Read");
-        for (let i = 0; i < notRead.length; i++) {
-            notRead[i].classList.add("hidden");
-            console.log(notRead[i].classList);
-        }     
-    }
-      
+sortRead.addEventListener("change", function sortbyReadness() {
+
+    function getUnreadBooks(books) {
+        return books.filter(e => e.status != "Read") || []; 
+    };
+
+    function updateUnreadbooks(list) {
+        if (list.length > 0) {
+            console.log("caralho ta fodam")
+            for(let i = 0; i < list.length; i++) {
+                list[i].
+            }
+        } 
+    };
+    
+    const unread = getUnreadBooks(myLibrary);
+    updateUnreadbooks(unread);    
 });
+
 
 //sort books by category
 const sortCategory = document.getElementById("categories");
