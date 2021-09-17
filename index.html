@@ -13,8 +13,9 @@
     <div id="nav">
         <select name="isBookRead" id="isBookReads">
             <option value="allRead">All</option>
-            <option value="toBeRead">To be Read</option>
             <option value="isRead">Read</option>
+            <option value="isReading">Reading</option>
+            <option value="toBeRead">To be Read</option>
           </select>
           <select name="categories" id="categories">
               <option value="allCategories">All</option>
@@ -45,9 +46,9 @@
                     </select><br />
                     <label for="statusForm">Status:</label>
                     <select name="status" id="statusForm" class="inputform">
-                        <option value="Not Read">Not Read</option>
-                        <option value="Reading">Currently Reading</option>
                         <option value="Read">Read</option>
+                        <option value="Reading">Currently Reading</option>
+                        <option value="Not Read">To be Read</option>
                     </select>
                 </div>
                 <button id="addBooktoLibrary" type="submit">add book</button> 
