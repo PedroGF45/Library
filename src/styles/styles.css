@@ -103,6 +103,12 @@ textarea {
 }
 
 
+/* hidden books */
+.hidden {
+    display: none;
+}
+
+
 
 /* 5star review */
 .rate {

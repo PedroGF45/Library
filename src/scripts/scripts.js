@@ -125,7 +125,14 @@ function updateLibraryOnDisplay(newBook) {
 //sort books by readness
 const sortRead = document.getElementById("isBookReads");
 sortRead.addEventListener("change", function sortByReadness() {
-    console.log(sortRead.value);
+    if (sortRead.value == "isRead") {
+        const notRead = myLibrary.filter(e => e.status != "Read");
+        for (let i = 0; i < notRead.length; i++) {
+            notRead[i].classList.add("hidden");
+            console.log(notRead[i].classList);
+        }     
+    }
+      
 });
 
 //sort books by category
