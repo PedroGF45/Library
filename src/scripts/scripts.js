@@ -127,15 +127,31 @@ const sortRead = document.getElementById("isBookReads");
 sortRead.addEventListener("change", function sortbyReadness() {
 
     if (sortRead.value == "isRead") {
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
         function getUnselectedBooks(books) {
             return books.filter(e => e.status != "Read") || []; 
         };
-    
+        
         function updateUnselectedbooks(list) {
             list.forEach(el => el.bookDiv.classList.add("hide"));  
         };
 
     } else if (sortRead.value == "isReading") {
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
         function getUnselectedBooks(books) {
             return books.filter(e => e.status != "Reading") || []; 
         };
@@ -145,6 +161,14 @@ sortRead.addEventListener("change", function sortbyReadness() {
         };
 
     } else if (sortRead.value == "toBeRead") {
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
         function getUnselectedBooks(books) {
             return books.filter(e => e.status != "NotRead") || []; 
         };
@@ -158,13 +182,23 @@ sortRead.addEventListener("change", function sortbyReadness() {
             return books; 
         };
 
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
         function updateUnselectedbooks(list) {
             list.forEach(el => el.bookDiv.classList.remove("hide"));  
         };
     }
     
-    const unread = getUnselectedBooks(myLibrary);
-    updateUnselectedbooks(unread);
+    const allUnhide = getAllBooksUnhide(myLibrary); 
+    updateUnhideBooks(allUnhide);
+    const unselected = getUnselectedBooks(myLibrary);
+    updateUnselectedbooks(unselected);
         
 });
 
