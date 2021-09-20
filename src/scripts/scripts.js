@@ -126,23 +126,53 @@ function updateLibraryOnDisplay(newBook) {
 const sortRead = document.getElementById("isBookReads");
 sortRead.addEventListener("change", function sortbyReadness() {
 
-    const unread = getUnreadBooks(myLibrary);
-    updateUnreadbooks(unread);
+    console.log(sortRead.value);
     
     
-    function getUnreadBooks(books) {
-        return books.filter(e => e.status != "Read") || []; 
-    };
+    if (sortRead.value == "isRead") {
+        const unread = getUnreadBooks(myLibrary);
+        updateUnreadbooks(unread);
 
-    function updateUnreadbooks(list) {
-        if (list.length > 0) {
-            console.log("caralho ta fodam");
-            for (let n = 0; n < list.length; n++) {
-                list[n].bookDiv.classList.add("hide");
-                console.log(list[n].bookDiv);
-            }
-        } 
-    };
+        function getUnreadBooks(books) {
+            return books.filter(e => e.status != "Read") || []; 
+        };
+    
+        function updateUnreadbooks(list) {
+            if (list.length > 0) {
+                for (let n = 0; n < list.length; n++) {
+                    list[n].bookDiv.classList.add("hide");
+                }
+            } 
+        };
+    } else if (sortRead.value == "isReading") {
+        function getUnreadBooks(books) {
+            return books.filter(e => e.status != "Reading") || []; 
+        };
+    
+        function updateUnreadbooks(list) {
+            if (list.length > 0) {
+                for (let n = 0; n < list.length; n++) {
+                    list[n].bookDiv.classList.add("hide");
+                }
+            } 
+        };
+    } else if (sortRead.value == "toBeRead") {
+        function getUnreadBooks(books) {
+            return books.filter(e => e.status != "NotRead") || []; 
+        };
+    
+        function updateUnreadbooks(list) {
+            if (list.length > 0) {
+                for (let n = 0; n < list.length; n++) {
+                    list[n].bookDiv.classList.add("hide");
+                }
+            } 
+        };
+    } else {
+        list.forEach(el => el.bookDiv.classList.remove("hide"));
+    }
+    
+    
     
        
 });
