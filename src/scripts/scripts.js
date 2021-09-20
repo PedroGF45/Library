@@ -206,8 +206,81 @@ sortRead.addEventListener("change", function sortbyReadness() {
 //sort books by category
 const sortCategory = document.getElementById("categories");
 sortCategory.addEventListener("change", function sortByCategory() {
-    console.log(sortCategory.value); 
+    if (sortCategory.value == "contemporary") {
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
+        function getUnselectedBooks(books) {
+            return books.filter(e => e.category != "contemporary") || []; 
+        };
+        
+        function updateUnselectedbooks(list) {
+            list.forEach(el => el.bookDiv.classList.add("hide"));  
+        };
+
+    } else if (sortCategory.value == "fantasy") {
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
+        function getUnselectedBooks(books) {
+            return books.filter(e => e.category != "fantasy") || []; 
+        };
+    
+        function updateUnselectedbooks(list) {
+            list.forEach(el => el.bookDiv.classList.add("hide"));  
+        };
+
+    } else if (sortCategory.value == "distopy") {
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
+        function getUnselectedBooks(books) {
+            return books.filter(e => e.category != "distopy") || []; 
+        };
+    
+        function updateUnselectedbooks(list) {
+            list.forEach(el => el.bookDiv.classList.add("hide"));  
+        };
+    
+    } else {
+        function getUnselectedBooks(books) {
+            return books; 
+        };
+
+        function updateUnhideBooks(alllist) {
+            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+        }
+
+        function getAllBooksUnhide(allbooks) {
+            return allbooks;
+        };
+
+        function updateUnselectedbooks(list) {
+            list.forEach(el => el.bookDiv.classList.remove("hide"));  
+        };
+    }
+    
+    const allUnhide = getAllBooksUnhide(myLibrary); 
+    updateUnhideBooks(allUnhide);
+    const unselected = getUnselectedBooks(myLibrary);
+    updateUnselectedbooks(unselected);
 });
+
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
