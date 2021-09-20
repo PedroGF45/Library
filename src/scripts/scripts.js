@@ -127,44 +127,44 @@ const sortRead = document.getElementById("isBookReads");
 sortRead.addEventListener("change", function sortbyReadness() {
 
     if (sortRead.value == "isRead") {
-        function getUnreadBooks(books) {
+        function getUnselectedBooks(books) {
             return books.filter(e => e.status != "Read") || []; 
         };
     
-        function updateUnreadbooks(list) {
+        function updateUnselectedbooks(list) {
             list.forEach(el => el.bookDiv.classList.add("hide"));  
         };
 
     } else if (sortRead.value == "isReading") {
-        function getUnreadBooks(books) {
+        function getUnselectedBooks(books) {
             return books.filter(e => e.status != "Reading") || []; 
         };
     
-        function updateUnreadbooks(list) {
+        function updateUnselectedbooks(list) {
             list.forEach(el => el.bookDiv.classList.add("hide"));  
         };
 
     } else if (sortRead.value == "toBeRead") {
-        function getUnreadBooks(books) {
+        function getUnselectedBooks(books) {
             return books.filter(e => e.status != "NotRead") || []; 
         };
     
-        function updateUnreadbooks(list) {
+        function updateUnselectedbooks(list) {
             list.forEach(el => el.bookDiv.classList.add("hide"));  
         };
 
     } else {
-        function getUnreadBooks(books) {
+        function getUnselectedBooks(books) {
             return books; 
         };
 
-        function updateUnreadbooks(list) {
+        function updateUnselectedbooks(list) {
             list.forEach(el => el.bookDiv.classList.remove("hide"));  
         };
     }
     
-    const unread = getUnreadBooks(myLibrary);
-    updateUnreadbooks(unread);
+    const unread = getUnselectedBooks(myLibrary);
+    updateUnselectedbooks(unread);
         
 });
 
