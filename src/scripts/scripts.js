@@ -212,7 +212,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
 
         function updateUnhideBooks(alllist) {
-            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+            alllist.forEach(el => el.bookDiv.classList.remove("hideCategory"));
         }
 
         function getUnselectedBooks(books) {
@@ -220,7 +220,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
         
         function updateUnselectedbooks(list) {
-            list.forEach(el => el.bookDiv.classList.add("hide"));  
+            list.forEach(el => el.bookDiv.classList.add("hideCategory"));  
         };
 
     } else if (sortCategory.value == "fantasy") {
@@ -229,7 +229,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
 
         function updateUnhideBooks(alllist) {
-            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+            alllist.forEach(el => el.bookDiv.classList.remove("hideCategory"));
         }
 
         function getUnselectedBooks(books) {
@@ -237,7 +237,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
     
         function updateUnselectedbooks(list) {
-            list.forEach(el => el.bookDiv.classList.add("hide"));  
+            list.forEach(el => el.bookDiv.classList.add("hideCategory"));  
         };
 
     } else if (sortCategory.value == "distopy") {
@@ -246,7 +246,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
 
         function updateUnhideBooks(alllist) {
-            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+            alllist.forEach(el => el.bookDiv.classList.remove("hideCategory"));
         }
 
         function getUnselectedBooks(books) {
@@ -254,7 +254,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
     
         function updateUnselectedbooks(list) {
-            list.forEach(el => el.bookDiv.classList.add("hide"));  
+            list.forEach(el => el.bookDiv.classList.add("hideCategory"));  
         };
     
     } else {
@@ -263,7 +263,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
 
         function updateUnhideBooks(alllist) {
-            alllist.forEach(el => el.bookDiv.classList.remove("hide"));
+            alllist.forEach(el => el.bookDiv.classList.remove("hideCategory"));
         }
 
         function getAllBooksUnhide(allbooks) {
@@ -271,7 +271,7 @@ sortCategory.addEventListener("change", function sortByCategory() {
         };
 
         function updateUnselectedbooks(list) {
-            list.forEach(el => el.bookDiv.classList.remove("hide"));  
+            list.forEach(el => el.bookDiv.classList.remove("hideCategory"));  
         };
     }
     
