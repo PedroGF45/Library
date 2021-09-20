@@ -138,38 +138,44 @@ sortRead.addEventListener("change", function sortbyReadness() {
         };
     
         function updateUnreadbooks(list) {
-            if (list.length > 0) {
-                for (let n = 0; n < list.length; n++) {
-                    list[n].bookDiv.classList.add("hide");
-                }
-            } 
+            list.forEach(el => el.bookDiv.classList.add("hide"));  
         };
+
     } else if (sortRead.value == "isReading") {
+        const unread = getUnreadBooks(myLibrary);
+        updateUnreadbooks(unread);
+
         function getUnreadBooks(books) {
             return books.filter(e => e.status != "Reading") || []; 
         };
     
         function updateUnreadbooks(list) {
-            if (list.length > 0) {
-                for (let n = 0; n < list.length; n++) {
-                    list[n].bookDiv.classList.add("hide");
-                }
-            } 
+            list.forEach(el => el.bookDiv.classList.add("hide"));  
         };
+
     } else if (sortRead.value == "toBeRead") {
+        const unread = getUnreadBooks(myLibrary);
+        updateUnreadbooks(unread);
+
         function getUnreadBooks(books) {
             return books.filter(e => e.status != "NotRead") || []; 
         };
     
         function updateUnreadbooks(list) {
-            if (list.length > 0) {
-                for (let n = 0; n < list.length; n++) {
-                    list[n].bookDiv.classList.add("hide");
-                }
-            } 
+            list.forEach(el => el.bookDiv.classList.add("hide"));  
         };
+
     } else {
-        list.forEach(el => el.bookDiv.classList.remove("hide"));
+        const unread = getUnreadBooks(myLibrary);
+        updateUnreadbooks(unread);
+
+        function getUnreadBooks(books) {
+            return books; 
+        };
+
+        function updateUnreadbooks(list) {
+            list.forEach(el => el.bookDiv.classList.remove("hide"));  
+        };
     }
     
     
