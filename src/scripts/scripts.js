@@ -1,4 +1,5 @@
 let myLibrary = [];
+let sharedbooks = []; 
 
 const openModalBtn= document.getElementById("openModal"); //get open modal button
 const modalDisplay = document.getElementById("modal"); //get modal id
@@ -13,6 +14,7 @@ const reviewModal = document.getElementById("reviewModal");
 
 //the object constructor
 function book() {
+    this.bookDiv = bookDiv;
     this.img = img,
     this.series = series,
     this.nameBook = nameBook,
@@ -64,8 +66,6 @@ function createBook() {
     //push the book into the array mylibrary
     myLibrary.push(newBook);
 
-
-    
     updateLibraryOnDisplay(newBook);
 };
 
@@ -94,6 +94,7 @@ function updateLibraryOnDisplay(newBook) {
     deleteIcon.classList.add("material-icons");
     deleteIcon.innerText = "delete";
 
+    newBook.bookDiv = bookDiv;
     img.src = newBook.img;
     seriesp.innerText = newBook.series;
     titlep.innerText = newBook.nameBook;
@@ -101,7 +102,6 @@ function updateLibraryOnDisplay(newBook) {
     categoryp.innerText = newBook.category;
     statusp.innerText = newBook.status;
     
-
     library.appendChild(bookDiv);
     bookDiv.appendChild(img);
     bookDiv.appendChild(seriesp);
@@ -126,21 +126,25 @@ function updateLibraryOnDisplay(newBook) {
 const sortRead = document.getElementById("isBookReads");
 sortRead.addEventListener("change", function sortbyReadness() {
 
+    const unread = getUnreadBooks(myLibrary);
+    updateUnreadbooks(unread);
+    
+    
     function getUnreadBooks(books) {
         return books.filter(e => e.status != "Read") || []; 
     };
 
     function updateUnreadbooks(list) {
         if (list.length > 0) {
-            console.log("caralho ta fodam")
-            for(let i = 0; i < list.length; i++) {
-                list[i].
+            console.log("caralho ta fodam");
+            for (let n = 0; n < list.length; n++) {
+                list[n].bookDiv.classList.add("hide");
+                console.log(list[n].bookDiv);
             }
         } 
     };
     
-    const unread = getUnreadBooks(myLibrary);
-    updateUnreadbooks(unread);    
+       
 });
 
 

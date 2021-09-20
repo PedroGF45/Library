@@ -102,10 +102,10 @@ textarea {
 
 }
 
-
 /* hidden books */
-.hidden {
+#books div.hide {
     display: none;
+    border: 1px solid red;
 }
 
 
