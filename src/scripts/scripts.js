@@ -126,13 +126,7 @@ function updateLibraryOnDisplay(newBook) {
 const sortRead = document.getElementById("isBookReads");
 sortRead.addEventListener("change", function sortbyReadness() {
 
-    console.log(sortRead.value);
-    
-    
     if (sortRead.value == "isRead") {
-        const unread = getUnreadBooks(myLibrary);
-        updateUnreadbooks(unread);
-
         function getUnreadBooks(books) {
             return books.filter(e => e.status != "Read") || []; 
         };
@@ -142,9 +136,6 @@ sortRead.addEventListener("change", function sortbyReadness() {
         };
 
     } else if (sortRead.value == "isReading") {
-        const unread = getUnreadBooks(myLibrary);
-        updateUnreadbooks(unread);
-
         function getUnreadBooks(books) {
             return books.filter(e => e.status != "Reading") || []; 
         };
@@ -154,9 +145,6 @@ sortRead.addEventListener("change", function sortbyReadness() {
         };
 
     } else if (sortRead.value == "toBeRead") {
-        const unread = getUnreadBooks(myLibrary);
-        updateUnreadbooks(unread);
-
         function getUnreadBooks(books) {
             return books.filter(e => e.status != "NotRead") || []; 
         };
@@ -166,9 +154,6 @@ sortRead.addEventListener("change", function sortbyReadness() {
         };
 
     } else {
-        const unread = getUnreadBooks(myLibrary);
-        updateUnreadbooks(unread);
-
         function getUnreadBooks(books) {
             return books; 
         };
@@ -178,9 +163,9 @@ sortRead.addEventListener("change", function sortbyReadness() {
         };
     }
     
-    
-    
-       
+    const unread = getUnreadBooks(myLibrary);
+    updateUnreadbooks(unread);
+        
 });
 
 
